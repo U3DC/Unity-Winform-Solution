@@ -1,7 +1,10 @@
 # Unity-Winform-Solution
 Unity winform solution
 
+EN:
+
 Q：When Open a new window (select file) Unity will be Automatic minimization, is boring. how can we fixed it?
+
 A:you can use this solution can fixed it!
 
 Q:Can I fixed it in Unity setting?
@@ -24,6 +27,7 @@ WindowOpenfile.cs is a sample for open file window.
 
 
 CH:
+
 WindowMod.cs 这个脚本用来控制窗口的置顶、全屏和边框设置。
 ToolControlTaskBar.cs 用来控制任务栏的显示和隐藏。
 WindowOpenfile.cs 这是一个打开选取窗口的样例。
