@@ -1,10 +1,10 @@
 ﻿/*===============================================================
- *Copyright(C) 2017 by    #COMPANY# All rights reserved. 
- *FileName:               #SCRIPTFULLNAME# 
- *Author:                 #AUTHOR# 
- *Version:                #VERSION# 
- *UnityVersion：          #UNITYVERSION# 
- *Date:                   #DATE# 
+ *Copyright(C) 2017 by    U3DC All rights reserved. 
+ *FileName:               WindowOpenfile 
+ *Author:                 MARK
+ *Version:                1.0
+ *UnityVersion：          Unity2017.1 
+ *Date:                   2017.9.19
  *Description:    		  
  *History: 				  
 ================================================================*/
@@ -30,16 +30,16 @@ public class WindowOpenfile : MonoBehaviour {
 
     void Start()
     {
-        ///隐藏任务栏
+        ///HideTaskBar
         ToolControlTaskBar.HideTaskBar();
-        Debug.Log(">>>>>>>>隐藏任务栏");
+
     }
 
 
     void OnApplicationQuit()
     {
         ToolControlTaskBar.ShowTaskBar();
-        Debug.Log(">>>>>>>> 显示任务栏");
+     
     }
 
 
@@ -62,7 +62,7 @@ public class WindowOpenfile : MonoBehaviour {
 		myofd.InitialDirectory = "file://" + UnityEngine.Application.dataPath;
 		myofd.Multiselect = false;
 
-		myofd.Filter = "音频文件(*.ogg,*.wav,*.mp3)|*.ogg;*.wav;*.mp3";
+		myofd.Filter = "AUDIOFILE(*.ogg,*.wav,*.mp3)|*.ogg;*.wav;*.mp3";
 		myofd.FilterIndex = 0;
 
 
@@ -85,7 +85,7 @@ public class WindowOpenfile : MonoBehaviour {
         mypicofd.Title = "Test";
 		mypicofd.InitialDirectory = "file://" + UnityEngine.Application.dataPath;
 		mypicofd.Multiselect = false;
-		mypicofd.Filter = "图片文件(*.png,*.jpg,*.bmp)|*.png;*.jpg;*.bmp";
+		mypicofd.Filter = "PICFILE(*.png,*.jpg,*.bmp)|*.png;*.jpg;*.bmp";
 		mypicofd.FilterIndex = 0;
 
 		if (mypicofd.ShowDialog () == DialogResult.OK) {
@@ -113,9 +113,9 @@ public class WindowOpenfile : MonoBehaviour {
 		yield return www;
 		UnityEngine.Resources.UnloadUnusedAssets ();
 
-       ///转换texture为sprite
+       ///convert texture to sprite
         Texture2D imgt = www.texture as Texture2D;
-        Sprite pic = Sprite.Create(imgt, new Rect(0, 0, imgt.width, imgt.height), new Vector2(0.5f, 0.5f));//后面Vector2就是你Anchors的Pivot的x/y属性值，0.5为居中
+        Sprite pic = Sprite.Create(imgt, new Rect(0, 0, imgt.width, imgt.height), new Vector2(0.5f, 0.5f));//Vector2 is Pivot value, 0.5 is center
         img.sprite = pic;
 
 
